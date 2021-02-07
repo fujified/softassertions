@@ -7,6 +7,5 @@ public class DragAndDrop {
     void DragAndDropWithSelenideActions() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         actions().moveToElement($("#column-a")).clickAndHold().moveByOffset(0,150).release().perform();
-
     }
 }
