@@ -2,6 +2,7 @@ import com.codeborne.selenide.CollectionCondition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SoftAssertions {
@@ -15,13 +16,13 @@ public class SoftAssertions {
         $("[name='q']").setValue("selenide").pressEnter();
 
         // go to the first link
-        $$("ul.repo-list li").first().$("a").click();
+        $(".repo-list a").click();
 
         // check it
         $("h1").shouldHave(text("selenide / selenide"));
 
         // go to wiki
-        $$("ul.UnderlineNav-body.list-style-none li").get(4).$("a").click();
+        $(byText("Wiki")).click();
 
         // go to SoftAssertions
         $$("ul li").findBy(text("SoftAssertions")).click();
