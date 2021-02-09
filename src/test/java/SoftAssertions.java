@@ -1,4 +1,4 @@
-import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -30,8 +30,8 @@ public class SoftAssertions {
         // check it
         $("#wiki-wrapper h1").shouldHave(text("SoftAssertions"));
 
-        // check for JUnip5 code
-        $$("#wiki-content ol li").shouldHave(CollectionCondition.itemWithText("Using JUnit5 extend test class:"));
+        // check for JUnit5 code
+        $("#wiki-body").shouldHave(Condition.text("Using JUnit5 extend test class:"));
     }
 }
 
